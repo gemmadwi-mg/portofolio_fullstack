@@ -31,16 +31,9 @@ export async function POST(request: Request) {
     const supabase = createClient(cookieStore);
     const data = await request.json();
     
-    // const response = await supabase.from("blogs").insert(data).select().single();
+    const response = await supabase.from("blogs").insert(data).select().single();
 
-    // return NextResponse.json(response)   
-
-    const response = await supabase.from("blogs").insert({ 
-        title: data.title,
-        content: data.content
-    }).select().single();
-
-    return NextResponse.json(response)  
+    return NextResponse.json(response)   
 }
 
 export async function PATCH(request: Request) {
