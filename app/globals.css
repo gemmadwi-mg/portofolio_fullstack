@@ -69,7 +69,7 @@
  
 @layer base {
   * {
-    @apply border;
+    @apply border-foreground/20;
   }
   html {
     scroll-behavior: smooth;
